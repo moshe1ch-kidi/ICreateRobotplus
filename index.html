@@ -3684,7 +3684,9 @@ function showName(n){
   showName = () => {};          /* no window by itself after a cable connection */
   const st = document.createElement('style');
   st.textContent = '#mbNameChip{border:0;background:none;padding:0;padding-inline-start:8px;border-inline-start:1px solid var(--line);margin:0;font:700 14px var(--f-ui, system-ui);color:#0082FC;cursor:pointer}' +
-    '#mbNameChip:hover{text-decoration:underline}#mbNameChip[hidden]{display:none}';
+    '#mbNameChip:hover{text-decoration:underline}#mbNameChip[hidden]{display:none}' +
+    /* on the green "connected" button: the name in a small white pill, in its own blue */
+    '.status[data-s="on"] #mbNameChip,.status[data-s="run"] #mbNameChip{background:#fff;border-inline-start:0;border-radius:99px;padding:1px 9px;margin-inline-start:4px}';
   document.head.appendChild(st);
   const chip = document.createElement('button');
   chip.type = 'button'; chip.id = 'mbNameChip'; chip.hidden = true;
