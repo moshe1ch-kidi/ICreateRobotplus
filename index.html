@@ -13,15 +13,15 @@
   --k-open:#FFBF00; --k-open-d:#CC9900; --k-open-t:#4A3700; --k-setup:#9966FF; --k-setup-d:#774DCB;
   --lcd:#0B1A28; --lcd-ink:#9FE6D7; --err-bg:#FDECEC; --ok-bg:#E6F5EC;
   --f-ui:"Rubik","Noto Sans Arabic","Segoe UI",Arial,sans-serif; --f-code:"JetBrains Mono",ui-monospace,Consolas,monospace;
-  --r:12px;
+  --r:12px; --conn:#2F8F46;
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
   --bg:#101024; --surface:#17172E; --sunk:#131328; --ink:#E6E6F5; --muted:#A0A0C4; --line:#2B2B48;
-  --accent:#8F89F7; --accent-ink:#120F3A; --accent-d:#5F58C9; --go:#2FBF63; --stop:#F06A6A; --sun:#FFD25E; --sun-ink:#2E2200;
+  --accent:#8F89F7; --accent-ink:#120F3A; --accent-d:#5F58C9; --go:#2FBF63; --conn:#23914A; --stop:#F06A6A; --sun:#FFD25E; --sun-ink:#2E2200;
   --lcd:#050C14; --lcd-ink:#9FE6D7; --err-bg:#3A1C1C; --ok-bg:#163223; color-scheme:dark}}
 :root[data-theme="dark"]{
   --bg:#101024; --surface:#17172E; --sunk:#131328; --ink:#E6E6F5; --muted:#A0A0C4; --line:#2B2B48;
-  --accent:#8F89F7; --accent-ink:#120F3A; --accent-d:#5F58C9; --go:#2FBF63; --stop:#F06A6A; --sun:#FFD25E; --sun-ink:#2E2200;
+  --accent:#8F89F7; --accent-ink:#120F3A; --accent-d:#5F58C9; --go:#2FBF63; --conn:#23914A; --stop:#F06A6A; --sun:#FFD25E; --sun-ink:#2E2200;
   --lcd:#050C14; --lcd-ink:#9FE6D7; --err-bg:#3A1C1C; --ok-bg:#163223; color-scheme:dark}
 html,body{height:100%}
 [hidden]{display:none!important}
@@ -50,6 +50,9 @@ header{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px}
 .dot{width:9px;height:9px;border-radius:50%;background:var(--muted)}
 .status[data-s="on"] .dot{background:var(--go)} .status[data-s="run"] .dot{background:var(--sun);box-shadow:0 0 0 3px color-mix(in srgb,var(--sun) 35%,transparent)}
 .status[data-s="busy"] .dot{background:var(--accent)}
+/* connected: the whole button is green */
+.status[data-s="on"],.status[data-s="run"]{background:var(--conn);border-color:var(--conn);color:#fff;font-weight:600}
+.status[data-s="on"] .dot{background:#fff}
 .tools{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px 14px;flex-basis:100%}
 .tgroup{justify-content:center}
 .tgroup{display:flex;flex-wrap:wrap;align-items:center;gap:10px}
